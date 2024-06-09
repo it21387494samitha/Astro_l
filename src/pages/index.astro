@@ -1,0 +1,18 @@
+---
+import { getAllPosts } from '../lib/posts';
+const allPosts = await getAllPosts();
+---
+
+<html>
+  <head>
+    <title>My Blog</title>
+  </head>
+  <body>
+    <h1>Welcome to My Blog</h1>
+    <ul>
+      {allPosts.map(post => (
+        <li><a href={post.url}>{post.title}</a></li>
+      ))}
+    </ul>
+  </body>
+</html>
